@@ -131,7 +131,7 @@ setup_bot() {
 server_app() {
     clear
     echo -e "${orange}─────────────────────────────────────────${neutral}"
-    echo -e "${green}- BOT SELLVPN TELEGRAM MOD BY XWAN${neutral}"
+    echo -e "${green}- BOT SELLVPN TELEGRAM MOD BY ALVI${neutral}"
     echo -e "${orange}─────────────────────────────────────────${neutral}"
     echo -e "${green}-${neutral} server create user"
     echo -e "${green}-${neutral} server delete user"
