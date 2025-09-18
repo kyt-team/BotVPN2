@@ -46,7 +46,7 @@ async function lockssh(username, password, exp, iplimit, serverId) {
         const s = d.data;
         const msg = `✅ *Lock SSH Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil diperbarui*
 ────────────────────────────
 👤 *Username*     : \`${s.username}\`
 ────────────────────────────
@@ -284,3 +284,4 @@ async function locktrojan(username, exp, quota, limitip, serverId) {
   }
   
   module.exports = { lockshadowsocks, locktrojan, lockvless, lockvmess, lockssh };
+
