@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { exec } = require('child_process');
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./sellvpn.db');
+const db = new sqlite3.Database('./sellvpn2.db');
 
 async function unlockssh(username, password, exp, iplimit, serverId) {
   console.log(`Unlock SSH account for ${username} with expiry ${exp} days, IP limit ${iplimit}, and password ${password}`);
@@ -46,7 +46,7 @@ async function unlockssh(username, password, exp, iplimit, serverId) {
         const s = d.data;
         const msg = `✅ *Unlock SSH Account Success!*
 
-🔄 *Akun berhasil dihapus*
+🔄 *Akun berhasil diperabruhi*
 ────────────────────────────
 👤 *Username*     : \`${s.username}\`
 ────────────────────────────
@@ -284,3 +284,4 @@ async function unlocktrojan(username, exp, quota, limitip, serverId) {
   }
   
   module.exports = { unlockshadowsocks, unlocktrojan, unlockvless, unlockvmess, unlockssh };
+
