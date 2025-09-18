@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { exec } = require('child_process');
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./sellvpn.db');
+const db = new sqlite3.Database('./sellvpn2.db');
 
 async function renewssh(username, exp, limitip, serverId) {
   console.log(`Renewing SSH account for ${username} with expiry ${exp} days, limit IP ${limitip} on server ${serverId}`);
@@ -314,3 +314,4 @@ async function renewtrojan(username, exp, quota, limitip, serverId) {
   }
   
   module.exports = { renewshadowsocks, renewtrojan, renewvless, renewvmess, renewssh };
+
