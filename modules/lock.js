@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { exec } = require('child_process');
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./sellvpn.db');
+const db = new sqlite3.Database('./sellvpn2.db');
 
 async function lockssh(username, password, exp, iplimit, serverId) {
   console.log(`Lock SSH account for ${username} with expiry ${exp} days, IP limit ${iplimit}, and password ${password}`);
@@ -284,4 +284,5 @@ async function locktrojan(username, exp, quota, limitip, serverId) {
   }
   
   module.exports = { lockshadowsocks, locktrojan, lockvless, lockvmess, lockssh };
+
 
