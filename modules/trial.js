@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { exec } = require('child_process');
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./sellvpn.db');
+const db = new sqlite3.Database('./sellvpn2.db');
 async function trialssh(username, password, exp, iplimit, serverId) {
   console.log(`Creating SSH account for ${username} with expiry ${exp} days, IP limit ${iplimit}, and password ${password}`);
 
