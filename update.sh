@@ -1,13 +1,13 @@
 #!/bin/bash
-cat >/etc/systemd/system/sellvpn.service <<EOF
+cat >/etc/systemd/system/sellvpn2.service <<EOF
 [Unit]
-Description=SellVPN Bot Service
+Description=sellvpn2 Bot Service
 After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/root/BotVPN
-ExecStart=/usr/bin/node /root/BotVPN/app.js
+WorkingDirectory=/root/BotVPN2
+ExecStart=/usr/bin/node /root/BotVPN2/app.js
 Restart=always
 User=root
 Environment=NODE_ENV=production
@@ -16,10 +16,10 @@ Environment=NODE_ENV=production
 WantedBy=multi-user.target
 EOF
 
-cat >/usr/bin/backup_sellvpn <<'EOF'
+cat >/usr/bin/backup_sellvpn2 <<'EOF'
 #!/bin/bash
-VARS_FILE="/root/BotVPN/.vars.json"
-DB_FILE="/root/BotVPN/sellvpn.db"
+VARS_FILE="/root/BotVPN2/.vars.json"
+DB_FILE="/root/BotVPN2/sellvpn2.db"
 
 if [ ! -f "$VARS_FILE" ]; then
     echo "❌ File $VARS_FILE tidak ditemukan"
@@ -47,16 +47,16 @@ fi
 EOF
 
 # bikin cron job tiap 1 jam
-cat >/etc/cron.d/backup_sellvpn <<'EOF'
+cat >/etc/cron.d/backup_sellvpn2 <<'EOF'
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-0 */2 * * * root /usr/bin/backup_sellvpn
+0 */1 * * * root /usr/bin/backup_sellvpn2
 EOF
 
-chmod +x /usr/bin/backup_sellvpn
+chmod +x /usr/bin/backup_sellvpn2
 
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable sellvpn.service >/dev/null 2>&1
-systemctl start sellvpn.service >/dev/null 2>&1
-systemctl restart sellvpn.service >/dev/null 2>&1
+systemctl enable sellvpn2.service >/dev/null 2>&1
+systemctl start sellvpn2.service >/dev/null 2>&1
+systemctl restart sellvpn2.service >/dev/null 2>&1
 service cron restart
