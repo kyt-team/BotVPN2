@@ -126,7 +126,7 @@ const bot = new Telegraf(BOT_TOKEN);
 const adminIds = ADMIN;
 logger.info('Bot initialized');
 
-const db = new sqlite3.Database('./sellvpn.db', (err) => {
+const db = new sqlite3.Database('./sellvpn2.db', (err) => {
   if (err) {
     logger.error('Kesalahan koneksi SQLite3:', err.message);
   } else {
