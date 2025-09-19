@@ -5,7 +5,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 ```
 ## UPDATE SYSTEMCTL
 ```bash
- systemctl stop sellvpn && curl -sSL https://raw.githubusercontent.com/kyt-team/BotVPN2/main/update.sh -o update.sh && chmod +x update.sh && bash update.sh  && systemctl restart sellvpn
+ systemctl stop sellvpn && curl -sSL https://raw.githubusercontent.com/kyt-team/BotVPN2/main/update.sh -o update.sh && chmod +x update.sh && bash update.sh  && systemctl restart sellvpn2
 ```
 <img src="./ss.png" alt="image" width="500"/>
 
